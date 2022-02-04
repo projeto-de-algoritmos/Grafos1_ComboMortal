@@ -1,0 +1,10 @@
+d d/f f 1  ,  U/F N 4  ,  d d/f f 1  ,  f 1  ,  d d/f f 1  ,  f 3 2  ,  f f f 2 3 W!  ,  d d/f f 2+3  ,  SSR f 2+3
+d d/f f 1  ,  U/F N 4  ,  d d/f f 1  ,  f 1  ,  d d/f f 1  ,  f 3 2  ,  f f f 2 3
+d/f 2  ,  d d/f f 1  ,  f d/f N WS 3 B  ,  CJM d/f 1  ,  f 1  ,  f f f 3+4 2  ,  f f f 2 3
+d/f 2  ,  f d/f N iWS 3 B  ,  CJM d/f 1  ,  f 1  ,  d d/f f 1  ,  f 3 2  ,  f f f 2 3
+d/f 2  ,  d d/f f 1  ,  2  ,  d d/f f 1  ,  f 1  ,  f f f 3+4 2  ,  f f f 2 3
+d/f 2  ,  d d/f f 1  ,  2  ,  f 3 2  ,  WR 3+4 B  ,  CJM D/F 2 1
+4  ,  b 4  ,  dash  ,  d d/f f 1  ,  f 1  ,  d d/f f 1  ,  f 3 B  ,  CJM D/F 2 1
+u/f 2  ,  d d/f f 1  ,  f 2  ,  d d/f f 1  ,  f 1  ,  f f f 3+4 2  ,  WR 2 3
+LP d d/f f 1  ,  1  ,  d d/f f 1  ,  f 3 2  ,  dash d d/f f 2 1 W!  ,  2 3 B  ,  CJM 2+3
+d/f 2  ,  d d/f f 1  ,  1  ,  d d/f f 1  ,  f 3 2  ,  dash  ,  d d/f f 2 1 W!  ,  d 3 4 1 F!  ,  SSL 4 W!  ,  2 3 B  ,  CJM 2+3

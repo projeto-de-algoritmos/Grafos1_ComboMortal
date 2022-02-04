@@ -1,0 +1,10 @@
+f N d d/f 2  ,  u/f 3  ,  1+2 2  ,  d/b 2 4  ,  f N d d/f 1  ,  b 3+4
+cd 2  ,  d/f 1  ,  d/f 1  ,  1+2 2  ,  d/b 2 4  ,  WR 2+4
+f F 4 WB!  ,  4 W!  ,  f f f 2+4 F!  ,  1 W!  ,  D/B 2+4  ,  f N d d/f 1+2  ,  d/b f 2+4 F!  ,  b b  ,  d/f 1  ,  1+2 2  ,  d/b 2 4  ,  f f f 2+4
+u/f 4  ,  4  ,  WS 4  ,  d/b 2 4  ,  WR 2+4
+b 2 1 2  ,  dash  ,  f N d d/f 1  ,  1  ,  f f f 2+4
+d 1+4  ,  1  ,  1+2 2  ,  f 1+4 BB!  ,  u/f 3  ,  d/b 2 4  ,  dash d 2 4  ,  dash d 2 4 3
+d 1+4  ,  1  ,  d/f 3  ,  d/f 1  ,  1  ,  cd 1  ,  d/b 2 4  ,  dash cd 1  ,  b 3+4
+d 1+4  ,  2  ,  cc d/b 2 4  ,  cd 1  ,  d 2 4 3
+d 1+4  ,  1  ,  1+2 2  ,  2  ,  cd 1  ,  d/b 2 4  ,  WR 2+4
+d 1+4  ,  1  ,  d/f 3  ,  d/f 1  ,  d/f 3  ,  d/b 2 4  ,  WR 2+4
