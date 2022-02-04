@@ -7,7 +7,7 @@
 |Matrícula | Aluno |
 | -- | -- |
 | 17/0034992  |  Gustavo Afonso Pires Severo |
-| xx/xxxxxxx  |  xxxx xxxx xxxxx |
+| 17/0011119  |  Geraldo Victor Alves Barbosa |
 
 ## Sobre 
 Descreva os objetivos do seu projeto e como ele funciona. 
