@@ -5,6 +5,7 @@
 # along with matplotlib
 import networkx as nx
 import matplotlib.pyplot as plt
+from CsvDataReader import CsvDataReader
 
 
 # Defining a Class
@@ -31,19 +32,18 @@ class GraphVisualization:
         G = nx.Graph()
         G.add_edges_from(self.visual)
         nx.draw_networkx(G)
-        plt.show()
+        plt.savefig("teste.png")
+        # plt.show()
 
     def run_graph_visualization(self, list_to_plot):
         # Driver code
         G = GraphVisualization()
-
         for edge in list_to_plot:
             G.addEdge(edge[0], edge[1])
-
-        #G.addEdge('z', 'c')
-        #G.addEdge('x', 'c')
-        #G.addEdge('x', 'v')
-        #G.addEdge('n', 'v')
-        #G.addEdge('v', 'b')
-        #G.addEdge('x', 'z')
         G.visualize()
+
+
+G = GraphVisualization()
+Csv = CsvDataReader('Liu_Kang.csv')
+List = Csv.get_pairs()
+G.run_graph_visualization(List)
