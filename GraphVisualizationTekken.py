@@ -6,6 +6,7 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 from CsvDataReaderTekken import CsvDataReader
+from networkx.drawing.nx_pydot import graphviz_layout
 
 
 # Defining a Class
@@ -31,7 +32,8 @@ class GraphVisualization:
     def visualize(self):
         G = nx.Graph()
         G.add_edges_from(self.visual)
-        nx.draw_networkx(G)
+        pos = graphviz_layout(G, prog="dot")
+        nx.draw(G, pos, with_labels=True, node_color="Red")
         plt.savefig("tekken.png")
 
     def run_graph_visualization(self, list_of_combos):
