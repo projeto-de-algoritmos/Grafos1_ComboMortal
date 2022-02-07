@@ -18,3 +18,6 @@ class CsvDataReader:
     def get_rows_of_file(self):
         return self.rows
 
+    def get_first_command_of_file(self, line):
+        return self.rows[line][0]
+

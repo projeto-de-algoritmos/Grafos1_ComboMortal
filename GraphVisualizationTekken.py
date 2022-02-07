@@ -1,5 +1,6 @@
 # código para demonstrar a biblioteca
 # disponível em: https://www.geeksforgeeks.org/visualize-graphs-in-python/
+# combos disponíveis em: http://tekken7combo.kagewebsite.com/
 
 # First networkx library is imported
 # along with matplotlib
@@ -20,7 +21,7 @@ class GraphVisualization:
 
     # addEdge function inputs the vertices of an
     # edge and appends it to the visual list
-    def addEdge(self, a, b):
+    def add_edge(self, a, b):
         temp = [a, b]
         self.visual.append(temp)
 
@@ -29,30 +30,44 @@ class GraphVisualization:
     # creates a graph with a given list
     # nx.draw_networkx(G) - plots the graph
     # plt.show() - displays the graph
-    def visualize(self):
-        G = nx.Graph()
+    def visualize_full_graph(self):
+        G = nx.DiGraph()
         G.add_edges_from(self.visual)
         pos = graphviz_layout(G, prog="dot")
-        nx.draw(G, pos, with_labels=True, node_color="Red")
-        plt.savefig("tekken.png")
+        nx.draw(G, pos, with_labels=True, arrowstyle='-|>', arrows=True, node_color="Red")
+        plt.savefig(Character + '.png')
+        plt.clf()
 
-    def run_graph_visualization(self, list_of_combos):
-        # Driver code
+    def visualize_graph_from_combo(self, command):
+        G = nx.DiGraph()
+        G.add_edges_from(self.visual)
+        T = nx.dfs_tree(G, source=command)
+        pos = graphviz_layout(T, prog="dot")
+        nx.draw(T, pos, with_labels=True, arrowstyle='-|>', arrows=True)
+        plt.savefig('Possibilidades_' + Character + '_from_combo_n:' + str(NumCombo) + '.png')
+        plt.clf()
+
+    def add_all_edges(self, list_of_combos):
         G = GraphVisualization()
         for combo in list_of_combos:
-            # actual_command = 0
-            # next_command = 1
             for commands in combo:
                 is_not_last_element = combo.index(commands) + 1 < len(combo)
                 if is_not_last_element:
                     actual_commands = combo[combo.index(commands)]
                     next_commands = combo[combo.index(commands)+1]
-                    G.addEdge(actual_commands, next_commands)
+                    G.add_edge(actual_commands, next_commands)
 
-        G.visualize()
+        return G
 
 
 G = GraphVisualization()
-Csv = CsvDataReader('./tekken/Alisa.csv')
-List = Csv.get_rows_of_file()
-G.run_graph_visualization(List)
+Character = input("Digite o nome do personagem que deseja ver os combos:  ")
+print('==================================')
+NumCombo = int(input("Digite a partir de qual combo deseja ver as possibilidades:  "))
+Csv = CsvDataReader('./tekken/' + Character + '.csv')
+ListOfCombos = Csv.get_rows_of_file()
+FirstCommandFromCombo = Csv.get_first_command_of_file(NumCombo)
+G = G.add_all_edges(ListOfCombos)
+G.visualize_graph_from_combo(FirstCommandFromCombo)
+G.visualize_full_graph()
+
