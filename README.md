@@ -11,9 +11,10 @@
 
 ## Sobre 
 O projeto tem como objetivo converter uma lista de combos de jogo de luta em um grafo de combos, de forma a representar de maneira mais compacta e fluida os movimentos possíveis para o jogador. 
+[Link para apresentação](https://www.youtube.com/watch?v=YJZZbTrr7do&ab_channel=GeraldoVictor)
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+Mostrados na sessão de uso.
 
 ## Instalação 
 **Linguagem**: Python3.8 ou superior<br>
