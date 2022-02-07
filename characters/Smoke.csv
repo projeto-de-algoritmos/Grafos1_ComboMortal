@@ -1,0 +1,7 @@
+X, X2, Y 
+X, A 
+← + X, B 
+← + Y, A 
+Y, X, B 
+A, ↓ + X, Y 
+A, Y 

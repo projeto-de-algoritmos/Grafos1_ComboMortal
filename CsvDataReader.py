@@ -1,28 +1,23 @@
-import pandas as pd
+import csv
 
 
 class CsvDataReader:
     def __init__(self, file_name):
-        self.df = pd.read_csv(file_name)
-        self.df.fillna('', inplace=True)
-        self.inputs_list = []
+        self.file = open(file_name)
+        type(self.file)
+        self.csvreader = csv.reader(self.file)
+
+        self.rows = []
+        for row in self.csvreader:
+            self.rows.append(row)
+        self.file.close()
 
     def print_df(self):
-        print(self.df)
+        print(self.rows)
 
-    def get_pairs(self):
+    def get_rows_of_file(self):
+        return self.rows
 
-        self.n = 0
+    def get_first_command_of_file(self, line):
+        return self.rows[line][0]
 
-        # essa parte do código vai ter que ser alterada pois só funciona para 3 colunas, temos que fazer um código modular
-
-        for line in self.df.input_1:
-            if self.df.input_1[self.n] != '' and self.df.input_1[self.n] != '':
-                self.inputs_list.append([self.df.input_1[self.n], self.df.input_2[self.n]])
-
-            if self.df.input_2[self.n] != '' and self.df.input_3[self.n] != '':
-                self.inputs_list.append([self.df.input_2[self.n], self.df.input_3[self.n]])
-
-            self.n += 1
-
-        return self.inputs_list
