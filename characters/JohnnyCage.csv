@@ -1,9 +1,9 @@
 X, X2, X3
-X, X2, → + X 
+X, X2, -> + X 
 X, X2, B 
 X, A, Y 
-Y, X, → + Y 
-Y, X, ← + B 
-→ + A, Y 
+Y, X, -> + Y 
+Y, X, <- + B 
+-> + A, Y 
 B, B2 
-→ + A, A, ← + A 
+-> + A, A, <- + A 

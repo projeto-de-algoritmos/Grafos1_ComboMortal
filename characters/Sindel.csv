@@ -1,11 +1,11 @@
 X, X2, X3 
 X, X2, ← + Y, B 
 ← + X, Y 
-→ + X, Y, B 
+-> + X, Y, B 
 Y, X, Y2 
 Y, X, ← + A 
 ← + Y, B 
 A, X, X2 
 A, X, ← + Y 
-← + A, → + Y 
+← + A, -> + Y 
 B, B2, Up + A

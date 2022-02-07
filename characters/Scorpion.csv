@@ -2,6 +2,6 @@ X, X2, X3
 X, X2, B 
 Y, X, Y2 
 Y, X + Y 
-→ + Y, X, B 
+-> + Y, X, B 
 A, A2, B 
-→ + B, A 
+-> + B, A 
