@@ -1,12 +1,6 @@
-# código para demonstrar a biblioteca
-# disponível em: https://www.geeksforgeeks.org/visualize-graphs-in-python/
-
-# First networkx library is imported
-# along with matplotlib
 import networkx as nx
 import matplotlib.pyplot as plt
-from CsvDataReader import CsvDataReader
-
+from networkx.drawing.nx_pydot import graphviz_layout
 
 # Defining a Class
 class GraphVisualization:
@@ -19,31 +13,39 @@ class GraphVisualization:
 
     # addEdge function inputs the vertices of an
     # edge and appends it to the visual list
-    def addEdge(self, a, b):
+    def add_edge(self, a, b):
         temp = [a, b]
         self.visual.append(temp)
 
     # In visualize function G is an object of
     # class Graph given by networkx G.add_edges_from(visual)
     # creates a graph with a given list
-    # nx.draw_networkx(G) - plots the graph
-    # plt.show() - displays the graph
-    def visualize(self):
-        G = nx.Graph()
+
+    def visualize_full_graph(self, character):
+        G = nx.DiGraph()
         G.add_edges_from(self.visual)
-        nx.draw_networkx(G)
-        plt.savefig("teste.png")
-        # plt.show()
+        pos = graphviz_layout(G, prog="dot")
+        nx.draw(G, pos, with_labels=True, arrowstyle='-|>', arrows=True, node_color="salmon")
+        plt.savefig(character + '.png')
+        plt.clf()
 
-    def run_graph_visualization(self, list_to_plot):
-        # Driver code
+    def visualize_graph_from_combo(self, command, character, numCombo):
+        G = nx.DiGraph()
+        G.add_edges_from(self.visual)
+        T = nx.dfs_tree(G, source=command)
+        pos = graphviz_layout(T, prog="dot")
+        nx.draw(T, pos, with_labels=True, arrowstyle='-|>', arrows=True)
+        plt.savefig('Possibilidades_' + character + '_from_combo_n' + str(numCombo + 1) + '.png')
+        plt.clf()
+
+    def add_all_edges(self, listOfCombos):
         G = GraphVisualization()
-        for edge in list_to_plot:
-            G.addEdge(edge[0], edge[1])
-        G.visualize()
+        for combo in listOfCombos:
+            for commands in combo:
+                is_not_last_element = combo.index(commands) + 1 < len(combo)
+                if is_not_last_element:
+                    actual_commands = combo[combo.index(commands)]
+                    next_commands = combo[combo.index(commands)+1]
+                    G.add_edge(actual_commands, next_commands)
 
-
-G = GraphVisualization()
-Csv = CsvDataReader('Liu_Kang.csv')
-List = Csv.get_pairs()
-G.run_graph_visualization(List)
+        return G
