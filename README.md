@@ -12,6 +12,7 @@
 ## Sobre 
 O projeto tem como objetivo converter uma lista de combos de jogo de luta em um grafo de combos, de forma a representar de maneira mais compacta e fluida os movimentos possíveis para o jogador. 
 [Link para apresentação](https://www.youtube.com/watch?v=YJZZbTrr7do&ab_channel=GeraldoVictor)
+[Link para baixar a apresentação](https://drive.google.com/file/d/1LTUkYjGQEXLw8JDymCqGc9OfT7EwNHqd/view?usp=sharing)
 
 ## Screenshots
 Mostrados na sessão de uso.
